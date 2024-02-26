@@ -1,0 +1,64 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url = env("DATABASE_URL")
+}
+
+enum Role {
+  ADMIN
+  USER
+}
+
+model User {
+  id Int @id @default(autoincrement())
+  email String @unique
+  name String?
+  role Role
+  isEmailVerified Boolean @default(false)
+  hash String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  docBoxes DocBox[]
+
+  @@map("users")
+}
+
+// model Doc {
+//   id Int @id @default(autoincrement())
+//   doc_id String
+//   user User? @relation("UserDocs", fields: [user_id], references: [id])
+//   user_id  Int? 
+
+//   createdAt DateTime @default(now())
+//   updatedAt DateTime @updatedAt
+//   @@map("docs")
+// }
+
+model DocBox {
+  id            Int    @id @default(autoincrement())
+  displayName   String 
+  owner         User      @relation(fields: [ownerId], references: [id])
+  ownerId       Int
+  documents     Document[]
+
+  @@map("docBoxes")
+}
+
+model Document {
+  id        Int    @id @default(autoincrement())
+  docBox    DocBox    @relation(fields: [docBoxId], references: [id])
+  docBoxId  Int
+  s3FileId  String
+  name String
+  fileId String
+
+  @@map("documents")
+}
