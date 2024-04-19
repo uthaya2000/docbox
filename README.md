@@ -1,73 +1,37 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# DocBox
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+DocBox is a file storage server built with NestJS, providing users with a secure and efficient platform for organizing and accessing their documents. Each user can create multiple docBoxes, each containing multiple documents that are only accessible to the docBox owner. This README provides an overview of the project, its features, technologies used, and potential extensions.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## Features
 
-## Description
+- **Secure Document Storage:** Utilizes AWS S3 for secure and reliable document storage, ensuring data integrity and confidentiality.
+- **Multi-DocBox Support:** Users can create multiple docBoxes, each functioning as a separate container for documents.
+- **Document Privacy:** Documents within a docBox are only accessible to the respective docBox owner, maintaining privacy.
+- **API-driven Approach:** Offers a comprehensive API for seamless file storage and docBox management, enabling easy integration with other systems.
+- **User Management:** Includes user management functionalities for creating, modifying, and deleting user accounts, ensuring proper access control.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Technologies Used
 
-## Installation
+- **NestJS:** A progressive Node.js framework for building efficient, reliable, and scalable server-side applications.
+- **AWS S3:** Secure cloud storage service used for document storage.
+- **RESTful API:** Implements a RESTful API architecture for communication with external systems.
+- **JWT Authentication:** Utilizes JSON Web Tokens (JWT) for secure authentication and authorization of API requests.
+- **TypeORM:** An Object-Relational Mapping (ORM) library for TypeScript and JavaScript, used for database management.
+- **PostgreSQL:** SQL database used for storing user metadata, docBox configurations, and access controls.
 
-```bash
-$ yarn install
-```
+## Usage
 
-## Running the app
+To run the project locally, follow these steps:
 
-```bash
-# development
-$ yarn run start
+1. Clone the repository: `git clone https://github.com/yourusername/docbox.git`
+2. Install dependencies: `npm install`
+3. Configure AWS credentials and other environment variables.
+4. Run the NestJS server: `npm run start`
 
-# watch mode
-$ yarn run start:dev
+## Potential Extensions
 
-# production mode
-$ yarn run start:prod
-```
-
-## Test
-
-```bash
-# unit tests
-$ yarn run test
-
-# e2e tests
-$ yarn run test:e2e
-
-# test coverage
-$ yarn run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+- **Collaborative DocBoxes:** Enable multiple users to collaborate within a docBox, supporting real-time document editing.
+- **Advanced Search Functionality:** Implement advanced search capabilities for quick document retrieval.
+- **Integration with Third-Party Services:** Integrate with popular productivity tools for document migration and synchronization.
+- **Enhanced Security Measures:** Implement encryption-at-rest and access control lists (ACLs) for enhanced security.
+- **Share Single Document:** Allow users to share individual documents with different user email IDs, enabling collaboration and access control on a per-document basis.
