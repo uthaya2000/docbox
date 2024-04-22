@@ -16,7 +16,7 @@ DocBox is a file storage server built with NestJS, providing users with a secure
 - **AWS S3:** Secure cloud storage service used for document storage.
 - **RESTful API:** Implements a RESTful API architecture for communication with external systems.
 - **JWT Authentication:** Utilizes JSON Web Tokens (JWT) for secure authentication and authorization of API requests.
-- **TypeORM:** An Object-Relational Mapping (ORM) library for TypeScript and JavaScript, used for database management.
+- **Prisma:** An Object-Relational Mapping (ORM) library for TypeScript and JavaScript, used for database management.
 - **PostgreSQL:** SQL database used for storing user metadata, docBox configurations, and access controls.
 
 ## Usage
